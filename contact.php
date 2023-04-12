@@ -20,7 +20,6 @@ $sql1 = "SELECT * FROM `add_notes`";
 $result1 = mysqli_query($conn, $sql1);
 ?>
 
-<!-- contact-page -->
 
 <div class="container">
 
