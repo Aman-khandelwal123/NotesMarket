@@ -1,3 +1,4 @@
+<!-- <?php include('config.php') ?> -->
 <?php include('include/header.php')  ?>
 
 <div class="bg"></div>
@@ -39,5 +40,5 @@
         </div>
     </div>
 </section>
-
+s
 <?php include('include/footer.php')  ?>

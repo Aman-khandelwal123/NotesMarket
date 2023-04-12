@@ -1,3 +1,4 @@
+<!-- <?php include('config.php') ?> -->
 <?php include('include/header.php') ?>
 
 <div class="container-notes">

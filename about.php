@@ -1,3 +1,4 @@
+<!-- <?php include('config.php') ?> -->
 <?php include('include/header.php') ?>
 
 <!-- about-section -->
@@ -12,7 +13,7 @@
             <p>Bachelor of Computer Applications (2019-2022)</p>
             <div class="btn">
                 <a href="contact.php">Contact Me</a>
-                <a href="#">Portfolio</a>
+                <a href="/">Portfolio</a>
             </div>
         </div>
     </div>

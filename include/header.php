@@ -8,6 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -16,9 +17,11 @@
             <div class="logo">
                 <a href="index.php">Notes<span>Market</span></a>
             </div>
+
             <button type="button" class="nav-toggler">
-                <!-- <span></span> -->
+                <span></span>
             </button>
+
             <div class="nav">
                 <ul>
                     <li><a class="" href="index.php">Home</a></li>
@@ -26,6 +29,7 @@
                     <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div>
+            
         </div>
     </div>
 </body>
