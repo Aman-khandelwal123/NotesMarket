@@ -60,7 +60,7 @@ $result1 = mysqli_query($conn, $sql1);
                     <textarea id="message" name="address" placeholder="Write a message here" required></textarea>
                 </div>
                 <div class="button">
-                    <input type="submit" name="submit" value="Send Now">
+                    <input type="submit" name="submit" onclick="myFunction()" value="Send Now">
                 </div>
                 <div class="button">
                     <input type="reset" value="Reset">
@@ -108,9 +108,12 @@ $result1 = mysqli_query($conn, $sql1);
         </div>
     </div>
 </div>
+
+
 <?php include('include/footer.php') ?>
-<!-- <script>
+<script>
     function myFunction() {
         alert("Insert SuceesFully");
     }
-</script> -->
+</script>
+

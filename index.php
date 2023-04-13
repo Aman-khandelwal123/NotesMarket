@@ -40,5 +40,5 @@
         </div>
     </div>
 </section>
-s
+
 <?php include('include/footer.php')  ?>
