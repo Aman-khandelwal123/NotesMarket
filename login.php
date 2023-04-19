@@ -39,7 +39,7 @@
 <div id="main_content">
     <div class="login-container" id='login' style="display: block;">
         <div class="auth mx-4">
-            <div class="card py-3 mt-5 col-12 col-sm-6 col-md-12 col-lg-4">
+            <div class="card py-3 py-3 col-12 col-sm-6 col-md-5 col-lg-4">
                 <div class="card-body">
                     <form name="f1" action="index.php" onsubmit="return validation()" method="POST">
                         <div class="text-center pb-2">
