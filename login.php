@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" id="user" name="user"  autocomplete='off' placeholder="Enter Username" />
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Username</label>
+                        <label class="form-label">Password</label>
                         <input type="password" class="form-control" id="pass" name="pass"  autocomplete='off' placeholder="Enter Password" />
                     </div>
                     <div class="text-center">
