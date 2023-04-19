@@ -7,6 +7,11 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
+    // $img = $_FILES['img']['name'];
+    // $img_tmp = $_FILES['img']['img_tmp'];
+    // $size = $_FILES['img']['size'];
+    // $img_type = $_FILES['img']['img_type'];
+    // move_uploaded_file($img_tmp, "upload/" . $img);
     $sql = "INSERT INTO add_notes(`name`,`phone`,`address`) VALUES('$name','$phone','$address')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
