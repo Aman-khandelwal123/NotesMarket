@@ -23,10 +23,47 @@ if (isset($_POST['submit'])) {
 // <!-- SHOW DATA -->
 $sql1 = "SELECT * FROM `add_notes`";
 $result1 = mysqli_query($conn, $sql1);
+
+// update
+if (isset($_POST['update'])) {
+    $upd_id = $_GET['id'];
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    // if (empty($_FILES['img']['name'])) {
+    //     $image = $_POST['old_image'];
+    // } else {
+    //     $image = $_FILES['img']['name'];
+    //     $img_tmp = $_FILES['img']['tmp_name'];
+    //     $size = $_FILES['img']['size'];
+    //     $img_type = $_FILES['img']['type'];
+    //     move_uploaded_file($img_tmp, "upload/" . $image);
+    // }
+    $sql2 = "UPDATE `add_notes` SET name = '$name',phone='$phone',address= '$address' WHERE id = '$upd_id'";
+    $res = mysqli_query($conn, $sql2);
+    if ($res) {
+        header('Location:contact.php');
+    } else {
+        echo "Data Not Updated";
+    }
+}
 ?>
 
 
 <div class="container">
+    <!-- update -->
+    <?php
+    if (isset($_GET['id'])) {
+        // $upd_id = $_GET['id'];
+        // $sqlio = "SELECT *FROM tbl_student WHERE id = '$upd_id'";
+        // $resu = mysqli_query($conn, $sqlio);
+        // $update = mysqli_fetch_assoc($resu);
+        $upd_id = $_GET['id'];
+        $sqlio = "SELECT *FROM add_notes WHERE id = '$upd_id'";
+        $resu = mysqli_query($conn, $sqlio);
+        $update = mysqli_fetch_assoc($resu);
+    }
+    ?>
     <section class="contact-us">
         <div class="left-side">
             <div class="address details">
@@ -54,19 +91,26 @@ $result1 = mysqli_query($conn, $sql1);
             <form method='post' enctype="multipart/form-data">
                 <!-- <input type='hidden' name='form-name' value='form 1' /> -->
                 <div class="input-box">
-                    <input id="" type="text" name="name" placeholder="Enter your name" required>
+                    <input id="" type="text" name="name"  value="<?php if (isset($upd_id)) { echo $update['name'];} ?>" placeholder="Enter your name" required>
                 </div>
                 <div class="input-box">
-                    <input id="phone" type="phone" name="phone" placeholder="Enter your phone" required>
+                    <input id="" type="phone" name="phone"  value="<?php if (isset($upd_id)) { echo $update['phone'];} ?>" placeholder="Enter your phone" required>
                 </div>
                 <div class="input-box message-box">
-                    <textarea id="message" name="address" placeholder="Write a message here" required></textarea>
+                    <input id=""  name="address" value="<?php if (isset($upd_id)) { echo $update['address'];} ?>" placeholder="Write a message here" required></input>
                 </div>
-                <div class="button">
+                <!-- <div class="button">
                     <input type="submit" name="submit" onclick="myFunction()" value="Send Now">
                 </div>
                 <div class="button">
                     <input type="reset" value="Reset">
+                </div> -->
+                <div class="col-md-12 mt-2 px-0">
+                    <?php if (isset($upd_id)) {
+                        echo "<button class='btn btn-sm btn-warning' type='submit' name='update'>Update</button>";
+                    } else {
+                        echo "<button mb-2 class='btn btn-sm btn-info' type='submit' name='submit'>Save</button>";
+                    } ?>
                 </div>
             </form>
         </div>
@@ -101,7 +145,8 @@ $result1 = mysqli_query($conn, $sql1);
                             <?php echo $data['address'] ?>
                         </td>
                         <td>
-                            <a href="delete.php?id=<?php echo $data['id'] ?>"><button type="delete" class="btn btn-primary" type="delete" name="delete">Delete</button></a>
+                            <a href="delete.php?id=<?php echo $data['id'] ?>"><button type="delete" class="btn btn-sm btn-primary" type="delete" name="delete">Delete</button></a>
+                            <a href="contact.php?id=<?php echo $data['id'] ?>"><button class='btn btn-sm btn-primary' type="update" name="update">Update</button></a>
                         </td>
                     </tr>
                 <?php
@@ -117,4 +162,3 @@ $result1 = mysqli_query($conn, $sql1);
         alert("Insert SuceesFully");
     }
 </script>
-
