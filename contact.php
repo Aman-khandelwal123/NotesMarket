@@ -145,7 +145,7 @@ if (isset($_POST['update'])) {
                             <?php echo $data['address'] ?>
                         </td>
                         <td>
-                            <a href="delete.php?id=<?php echo $data['id'] ?>"><button type="delete" class="btn btn-sm btn-primary" type="delete" name="delete">Delete</button></a>
+                            <a href="delete.php?id=<?php echo $data['id'] ?>"><button type="delete" class="btn btn-sm btn-danger" type="delete" name="delete">Delete</button></a>
                             <a href="contact.php?id=<?php echo $data['id'] ?>"><button class='btn btn-sm btn-primary' type="update" name="update">Update</button></a>
                         </td>
                     </tr>
