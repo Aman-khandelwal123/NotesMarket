@@ -43,7 +43,7 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <div class="order">
-                <p class="counter-count">4</p>
+                <p class="counter-count">30</p>
                 <p class="order-p">Orders</p>
             </div>
         </div>
@@ -55,7 +55,7 @@
         $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
         }, {
-            duration: 4000,
+            duration: 2000,
             easing: 'swing',
             step: function(now) {
                 $(this).text(Math.ceil(now));

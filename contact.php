@@ -22,9 +22,7 @@ $result1 = mysqli_query($conn, $sql1);
 
 
 <div class="container">
-
     <section class="contact-us">
-
         <div class="left-side">
             <div class="address details">
                 <i class="fa-solid fa-location-dot"></i>
@@ -108,8 +106,6 @@ $result1 = mysqli_query($conn, $sql1);
         </div>
     </div>
 </div>
-
-
 <?php include('include/footer.php') ?>
 <script>
     function myFunction() {

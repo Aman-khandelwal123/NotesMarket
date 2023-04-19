@@ -861,3 +861,9 @@
         color: #000000;
         line-height: 34px;
     }
+
+/* for doble click selection text
+::selection {
+    color: white;
+    background: #ffc0cbfa;
+} */
