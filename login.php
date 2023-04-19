@@ -5,7 +5,7 @@
     <div class="auth mx-4">
         <div class="card py-3 mt-5 col-12 col-sm-12 col-md-6 col-lg-4" style="margin: auto;">
             <div class="card-body">
-                <form name="f1" action="index.php" onsubmit="validation()" method="POST">
+                <form name="f1" action="index.php" onsubmit="return validation()" method="POST">
                     <div class="text-center pb-2">
                         <h5 class="m-0 pb-3"> Login to the NotesMarket</h5>
                     </div>
@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" id="user" name="user"  autocomplete='off' placeholder="Enter Username" />
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Password</label>
+                        <label class="form-label">Username</label>
                         <input type="password" class="form-control" id="pass" name="pass"  autocomplete='off' placeholder="Enter Password" />
                     </div>
                     <div class="text-center">
