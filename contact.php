@@ -74,13 +74,13 @@ if (isset($_POST['update'])) {
             <div class="Phone details">
                 <i class="fa-solid fa-phone"></i>
                 <div class="topic">Phone</div>
-                <div class="text-one"><a href="tel:8209788323">8209788323</a></div>
+                <div class="text-one"><a href="tel:8209788323">1122334466</a></div>
             </div>
             <div class="Email details">
                 <i class="fa-solid fa-envelope"></i>
                 <div class="topic">Email</div>
                 <!-- <div class="text-two">codingbandhu374@gmail.com</div> -->
-                <div class="text-one">amankhandelwal820@gmail.com</div>
+                <div class="text-one">amankhandelwal220@gmail.com</div>
             </div>
         </div>
         <div class="right-side">
@@ -91,13 +91,19 @@ if (isset($_POST['update'])) {
             <form method='post' enctype="multipart/form-data">
                 <!-- <input type='hidden' name='form-name' value='form 1' /> -->
                 <div class="input-box">
-                    <input id="" type="text" name="name"  value="<?php if (isset($upd_id)) { echo $update['name'];} ?>" placeholder="Enter your name" required>
+                    <input id="" type="text"name="name"
+                      value="<?php if(isset($upd_id)){echo $update['name'];} ?>" 
+                      placeholder="Enter your name" required>
                 </div>
                 <div class="input-box">
-                    <input id="" type="phone" name="phone"  value="<?php if (isset($upd_id)) { echo $update['phone'];} ?>" placeholder="Enter your phone" required>
+                    <input id="" type="phone" name="phone"
+                     value="<?php if(isset($upd_id)){echo $update['phone'];} ?>" 
+                     placeholder="Enter your phone" required>
                 </div>
                 <div class="input-box message-box">
-                    <input id=""  name="address" value="<?php if (isset($upd_id)) { echo $update['address'];} ?>" placeholder="Write a message here" required></input>
+                    <input id="" name="address"
+                     value="<?php if(isset($upd_id)){echo $update['address'];} ?>" 
+                     placeholder="Write a address here" required>
                 </div>
                 <!-- <div class="button">
                     <input type="submit" name="submit" onclick="myFunction()" value="Send Now">
