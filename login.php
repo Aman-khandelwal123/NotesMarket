@@ -70,8 +70,8 @@
 <!-- // validation for empty field login -->
 <script>
     function validation() {
-        var id = document.f1.user.value;
-        var ps = document.f1.pass.value;
+        let id = document.f1.user.value;
+        let ps = document.f1.pass.value;
         if (id.length == "" && ps.length == "") {
             alert("User Name and Password fields are empty");
             console.log(id.length);
@@ -82,31 +82,31 @@
                 console.log(ps.length);
                 return false;
             }
-            if (ps.length == "") {
+            if (ps.length == "") {  
                 alert("Password field is empty");
-                console.log(id.length);
+                console.log(ps.length);
                 return false;
             }
         }
     }
     // for password show/hide
     function password_show_hide() {
-        var x = document.getElementById("pass");
-        var show_eye = document.getElementById("show_eye");
-        var hide_eye = document.getElementById("hide_eye");
+        let x = document.getElementById("pass");
+        let show_eye = document.getElementById("show_eye");
+        let hide_eye = document.getElementById("hide_eye");
         hide_eye.classList.remove("d-none");
         if (x.type === "password") {
             x.type = "text";
             show_eye.style.display = "none";
             hide_eye.style.display = "block";
         } else {
-            x.type = "password";
-            show_eye.style.display = "block";
-            hide_eye.style.display = "none";
+           x.type = "password";
+           show_eye.style.display = "block";
+           hide_eye.style.display = "none";
         }
     }
     // function myFunction() {
-    //     var x = document.getElementById("pass");
+    //     let x = document.getElementById("pass");
     //     if (x.type === "password") {
     //         x.type = "text";
     //     } else {
