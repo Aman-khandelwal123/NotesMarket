@@ -54,8 +54,8 @@
                             <input type="password" class="form-control" id="pass" name="pass" autocomplete='off' placeholder="Enter Password" />
                             <!-- <i class="fa fa-eye" id="togglePassword" onclick="myFunction()" style="position:absolute; top:61%;right:13%; cursor: pointer;"></i> -->
                             <span class="pass-text" onclick="password_show_hide();">
-                                <i class="fa fa-eye" id="show_eye"></i>
-                                <i class="fa fa-eye-slash d-none" id="hide_eye"></i>
+                                <i class="fa fa-eye d-none" id="hide_eye" ></i>
+                                <i class="fa fa-eye-slash " id="show_eye"></i>
                             </span>
                         </div>
                         <div class="text-center">
@@ -67,7 +67,7 @@
         </div>
     </div>
 </div>
-<!-- // validation for empty field -->
+<!-- // validation for empty field login -->
 <script>
     function validation() {
         var id = document.f1.user.value;
