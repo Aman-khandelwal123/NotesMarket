@@ -7,12 +7,12 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    // $img = $_FILES['img']['name'];
-    // $img_tmp = $_FILES['img']['img_tmp'];
-    // $size = $_FILES['img']['size'];
-    // $img_type = $_FILES['img']['img_type'];
-    // move_uploaded_file($img_tmp, "upload/" . $img);
-    $sql = "INSERT INTO add_notes(`name`,`phone`,`address`) VALUES('$name','$phone','$address')";
+    $image = $_FILES['img']['name'];
+    $img_tmp = $_FILES['img']['img_tmp'];
+    $size = $_FILES['img']['size'];
+    $img_type = $_FILES['img']['img_type'];
+    move_uploaded_file($img_tmp, "upload/" . $image);
+    $sql = "INSERT INTO add_notes(`name`,`phone`,`address`,`img`) VALUES('$name','$phone','$address','$image')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "data insert";
@@ -30,16 +30,16 @@ if (isset($_POST['update'])) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    // if (empty($_FILES['img']['name'])) {
-    //     $image = $_POST['old_image'];
-    // } else {
-    //     $image = $_FILES['img']['name'];
-    //     $img_tmp = $_FILES['img']['tmp_name'];
-    //     $size = $_FILES['img']['size'];
-    //     $img_type = $_FILES['img']['type'];
-    //     move_uploaded_file($img_tmp, "upload/" . $image);
-    // }
-    $sql2 = "UPDATE `add_notes` SET name = '$name',phone='$phone',address= '$address' WHERE id = '$upd_id'";
+    if (empty($_FILES['img']['name'])) {
+        $image = $_POST['old_image'];
+    } else {
+        $image = $_FILES['img']['name'];
+        $img_tmp = $_FILES['img']['tmp_name'];
+        $size = $_FILES['img']['size'];
+        $img_type = $_FILES['img']['type'];
+        move_uploaded_file($img_tmp, "upload/" . $image);
+    }
+    $sql2 = "UPDATE `add_notes` SET name = '$name',phone='$phone',address= '$address',img ='$image' WHERE id = '$upd_id'";
     $res = mysqli_query($conn, $sql2);
     if ($res) {
         header('Location:contact.php');
@@ -91,19 +91,39 @@ if (isset($_POST['update'])) {
             <form method='post' enctype="multipart/form-data">
                 <!-- <input type='hidden' name='form-name' value='form 1' /> -->
                 <div class="input-box">
-                    <input id="" type="text"name="name"
-                      value="<?php if(isset($upd_id)){echo $update['name'];} ?>" 
-                      placeholder="Enter your name" required>
+                    <input id="" type="text" name="name" value="<?php if (isset($upd_id)) {
+                                                                    echo $update['name'];
+                                                                } ?>" placeholder="Enter your name" required>
                 </div>
                 <div class="input-box">
-                    <input id="" type="phone" name="phone"
-                     value="<?php if(isset($upd_id)){echo $update['phone'];} ?>" 
-                     placeholder="Enter your phone" required>
+                    <input id="" type="phone" name="phone" value="<?php if (isset($upd_id)) {
+                                                                        echo $update['phone'];
+                                                                    } ?>" placeholder="Enter your phone" required>
                 </div>
                 <div class="input-box message-box">
-                    <input id="" name="address"
-                     value="<?php if(isset($upd_id)){echo $update['address'];} ?>" 
-                     placeholder="Write a address here" required>
+                    <input id="" name="address" value="<?php if (isset($upd_id)) {
+                                                            echo $update['address'];
+                                                        } ?>" placeholder="Write a address here" required>
+                </div>
+                <div class="col-md-12 mt-2 px-0 input-box">
+                    <input type="file" name="img" id=""  class="form-control" value="<?php if (isset($upd_id)) {
+                                                                                        echo $update['img'];
+                                                                                    } ?>">
+                    <input type="hidden" name="old_image" id="" class="form-control" value="<?php if (isset($upd_id)) {
+                                                                                                echo $update['img'];
+                                                                                            } ?>">
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <?php
+                        if (isset($upd_id)) {
+                            $image1 = 'upload/' . $update['img'];
+                            echo " <img src='$image1' alt='' height = 100px width= 100px />";
+                        } else {
+                            echo " ";
+                        }
+                        ?>
+                    </div>
                 </div>
                 <!-- <div class="button">
                     <input type="submit" name="submit" onclick="myFunction()" value="Send Now">
@@ -131,6 +151,7 @@ if (isset($_POST['update'])) {
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Address</th>
+                    <th>Image</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -149,6 +170,9 @@ if (isset($_POST['update'])) {
                         </td>
                         <td>
                             <?php echo $data['address'] ?>
+                        </td>
+                        <td>
+                            <?php echo $data['img'] ?>
                         </td>
                         <td>
                             <a href="delete.php?id=<?php echo $data['id'] ?>"><button type="delete" class="btn btn-sm btn-danger" type="delete" name="delete">Delete</button></a>

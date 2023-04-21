@@ -79,7 +79,7 @@
         } else {
             if (id.length == "") {
                 alert("User Name is empty");
-                console.log(ps.length);
+                console.log(id.length);
                 return false;
             }
             if (ps.length == "") {  
