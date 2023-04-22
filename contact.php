@@ -74,13 +74,13 @@ if (isset($_POST['update'])) {
             <div class="Phone details">
                 <i class="fa-solid fa-phone"></i>
                 <div class="topic">Phone</div>
-                <div class="text-one"><a href="tel:8209788323">1122334466</a></div>
+                <div class="text-one"><a href="tel:8209788323">8209788323</a></div>
             </div>
             <div class="Email details">
                 <i class="fa-solid fa-envelope"></i>
                 <div class="topic">Email</div>
                 <!-- <div class="text-two">codingbandhu374@gmail.com</div> -->
-                <div class="text-one">amankhandelwal220@gmail.com</div>
+                <div class="text-one">amankhandelwal901@gmail.com</div>
             </div>
         </div>
         <div class="right-side">
