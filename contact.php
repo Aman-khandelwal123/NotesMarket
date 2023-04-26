@@ -80,7 +80,7 @@ if (isset($_POST['update'])) {
                 <i class="fa-solid fa-envelope"></i>
                 <div class="topic">Email</div>
                 <!-- <div class="text-two">codingbandhu374@gmail.com</div> -->
-                <div class="text-one">amankhandelwal901@gmail.com</div>
+                <div class="text-one"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">amankhandelwal901@gmail.com</a></div>
             </div>
         </div>
         <div class="right-side">
